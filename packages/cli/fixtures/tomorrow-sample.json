@@ -1,0 +1,210 @@
+{
+  "forecastDate": "2026-04-01",
+  "status": "complete",
+  "forecasts": [
+    {
+      "spotSlug": "muizenberg",
+      "source": "surf-forecast",
+      "waveHeightMin": 0.8,
+      "waveHeightMax": 1.2,
+      "wavePeriod": 11,
+      "swellDirection": "SSW",
+      "windSpeed": 9,
+      "windDirection": "NW",
+      "windState": "offshore",
+      "rating": 5.4,
+      "conditionText": "Clean morning runners before the midday bump.",
+      "highTideTime": "05:58",
+      "highTideHeight": 1.7,
+      "lowTideTime": "12:14",
+      "lowTideHeight": 0.4,
+      "waterTemp": 15,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "medium"
+      }
+    },
+    {
+      "spotSlug": "muizenberg",
+      "source": "surfline",
+      "waveHeightMin": 0.7,
+      "waveHeightMax": 1.1,
+      "wavePeriod": 10,
+      "swellDirection": "S",
+      "windSpeed": 11,
+      "windDirection": "NW",
+      "windState": "offshore",
+      "rating": 5.8,
+      "conditionText": "Best in the morning before cross-breeze creeps in.",
+      "highTideTime": "05:57",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:15",
+      "lowTideHeight": 0.4,
+      "waterTemp": 15,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "medium"
+      }
+    },
+    {
+      "spotSlug": "muizenberg",
+      "source": "windguru",
+      "waveHeightMin": 0.9,
+      "waveHeightMax": 1.3,
+      "wavePeriod": 11,
+      "swellDirection": "SSW",
+      "windSpeed": 12,
+      "windDirection": "WNW",
+      "windState": "cross-shore",
+      "conditionText": "Light morning texture, a little mixed by the afternoon.",
+      "highTideTime": "05:59",
+      "highTideHeight": 1.7,
+      "lowTideTime": "12:14",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "medium"
+      }
+    },
+    {
+      "spotSlug": "llandudno",
+      "source": "surf-forecast",
+      "waveHeightMin": 1.5,
+      "waveHeightMax": 2.1,
+      "wavePeriod": 14,
+      "swellDirection": "SW",
+      "windSpeed": 14,
+      "windDirection": "SE",
+      "windState": "offshore",
+      "rating": 6.8,
+      "conditionText": "Powerful lines with the cleaner window improving into the afternoon.",
+      "highTideTime": "06:02",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:19",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "high"
+      }
+    },
+    {
+      "spotSlug": "llandudno",
+      "source": "surfline",
+      "waveHeightMin": 1.4,
+      "waveHeightMax": 2.0,
+      "wavePeriod": 13,
+      "swellDirection": "SW",
+      "windSpeed": 13,
+      "windDirection": "SE",
+      "windState": "offshore",
+      "rating": 7.1,
+      "conditionText": "Afternoon offers the tidier groomed faces if the wind holds.",
+      "highTideTime": "06:03",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:18",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "high"
+      }
+    },
+    {
+      "spotSlug": "llandudno",
+      "source": "windguru",
+      "waveHeightMin": 1.6,
+      "waveHeightMax": 2.2,
+      "wavePeriod": 14,
+      "swellDirection": "WSW",
+      "windSpeed": 16,
+      "windDirection": "SE",
+      "windState": "offshore",
+      "conditionText": "Still a little lumpy early, cleaner through the afternoon.",
+      "highTideTime": "06:02",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:19",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "medium"
+      }
+    },
+    {
+      "spotSlug": "long-beach-kommetjie",
+      "source": "surf-forecast",
+      "waveHeightMin": 1.1,
+      "waveHeightMax": 1.7,
+      "wavePeriod": 13,
+      "swellDirection": "SW",
+      "windSpeed": 11,
+      "windDirection": "SE",
+      "windState": "offshore",
+      "rating": 7.4,
+      "conditionText": "Long walls and clean faces from first light through late morning.",
+      "highTideTime": "06:00",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:16",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "high"
+      }
+    },
+    {
+      "spotSlug": "long-beach-kommetjie",
+      "source": "surfline",
+      "waveHeightMin": 1.0,
+      "waveHeightMax": 1.8,
+      "wavePeriod": 12,
+      "swellDirection": "SW",
+      "windSpeed": 12,
+      "windDirection": "SE",
+      "windState": "offshore",
+      "rating": 7.8,
+      "conditionText": "Best bet with a proper morning window and enough shape into early afternoon.",
+      "highTideTime": "06:01",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:17",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "high"
+      }
+    },
+    {
+      "spotSlug": "long-beach-kommetjie",
+      "source": "windguru",
+      "waveHeightMin": 1.2,
+      "waveHeightMax": 1.9,
+      "wavePeriod": 13,
+      "swellDirection": "SW",
+      "windSpeed": 14,
+      "windDirection": "SSE",
+      "windState": "offshore",
+      "conditionText": "Cleanest early and still surfable through the afternoon.",
+      "highTideTime": "06:00",
+      "highTideHeight": 1.8,
+      "lowTideTime": "12:16",
+      "lowTideHeight": 0.4,
+      "waterTemp": 14,
+      "sunrise": "06:26",
+      "sunset": "18:11",
+      "rawData": {
+        "confidence": "high"
+      }
+    }
+  ]
+}

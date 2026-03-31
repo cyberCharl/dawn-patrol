@@ -1,4 +1,5 @@
 import { Command } from "commander"
+import type { SpotRecord } from "@workspace/schema/contracts"
 import type { SpotInput } from "@workspace/schema/validators"
 
 export function spotsCmd(apiUrl: string) {
@@ -9,7 +10,12 @@ export function spotsCmd(apiUrl: string) {
     .description("List all configured spots")
     .action(async () => {
       const res = await fetch(`${apiUrl}/api/spots`)
-      const spots = await res.json()
+      if (!res.ok) {
+        console.error(`Error ${res.status}: ${await res.text()}`)
+        process.exit(1)
+      }
+
+      const spots = (await res.json()) as SpotRecord[]
       if (!spots.length) {
         console.log("No spots configured. Use 'spots sync' to populate from config.")
         return
@@ -25,9 +31,16 @@ export function spotsCmd(apiUrl: string) {
     .option("-c, --config <path>", "Config file path", `${process.env.HOME}/.config/surf-check/config.json`)
     .action(async (opts) => {
       const config = JSON.parse(await Bun.file(opts.config).text())
+      if (!Array.isArray(config.spots)) {
+        console.error("Config file is missing a valid 'spots' array.")
+        process.exit(1)
+      }
 
       for (const spot of config.spots) {
-        const slug = spot.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/, "")
+        const slug = spot.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "")
         const payload: SpotInput = {
           slug,
           name: spot.name,
@@ -48,7 +61,8 @@ export function spotsCmd(apiUrl: string) {
           const result = await res.json()
           console.log(`  ${result.status}: ${slug}`)
         } else {
-          console.error(`  ❌ ${slug}: ${await res.text()}`)
+          console.error(`  Failed ${slug}: ${await res.text()}`)
+          process.exitCode = 1
         }
       }
     })

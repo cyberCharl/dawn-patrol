@@ -1,4 +1,5 @@
 import { Command } from "commander"
+import type { ForecastSummaryResponse } from "@workspace/schema/contracts"
 
 export function queryCmd(apiUrl: string) {
   const cmd = new Command("query").description("Query forecast data")
@@ -12,7 +13,12 @@ export function queryCmd(apiUrl: string) {
       if (opts.date) params.set("date", opts.date)
 
       const res = await fetch(`${apiUrl}/api/forecasts/summary?${params}`)
-      const data = await res.json()
+      if (!res.ok) {
+        console.error(`Error ${res.status}: ${await res.text()}`)
+        process.exit(1)
+      }
+
+      const data = (await res.json()) as ForecastSummaryResponse
 
       console.log(`\n🏄 Forecast Summary — ${data.date}\n`)
 
@@ -61,6 +67,11 @@ export function queryCmd(apiUrl: string) {
       params.set("limit", opts.limit)
 
       const res = await fetch(`${apiUrl}/api/forecasts?${params}`)
+      if (!res.ok) {
+        console.error(`Error ${res.status}: ${await res.text()}`)
+        process.exit(1)
+      }
+
       const data = await res.json()
 
       console.log(JSON.stringify(data, null, 2))

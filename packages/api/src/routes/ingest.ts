@@ -7,7 +7,6 @@ import {
   spots as spotsTable,
 } from "@workspace/schema/tables"
 import { ingestPayloadSchema } from "@workspace/schema/validators"
-import { eq } from "drizzle-orm"
 
 export const ingest = new Hono()
 

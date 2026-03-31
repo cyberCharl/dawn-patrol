@@ -3,14 +3,29 @@ import { zValidator } from "@hono/zod-validator"
 import { db } from "@workspace/schema/db"
 import { spots as spotsTable } from "@workspace/schema/tables"
 import { spotSchema } from "@workspace/schema/validators"
+import type { SpotRecord } from "@workspace/schema/contracts"
 import { eq } from "drizzle-orm"
 
 export const spots = new Hono()
 
+function serializeSpot(row: typeof spotsTable.$inferSelect): SpotRecord {
+  return {
+    slug: row.slug,
+    name: row.name,
+    description: row.description,
+    idealMinHeight: row.idealMinHeight,
+    idealMaxHeight: row.idealMaxHeight,
+    offshoreWindDirs: row.offshoreWindDirs
+      ? (JSON.parse(row.offshoreWindDirs) as string[])
+      : [],
+    notes: row.notes,
+  }
+}
+
 // List all spots
 spots.get("/", async (c) => {
   const rows = await db.select().from(spotsTable)
-  return c.json(rows)
+  return c.json(rows.map(serializeSpot))
 })
 
 // Get spot by slug
@@ -18,7 +33,7 @@ spots.get("/:slug", async (c) => {
   const slug = c.req.param("slug")
   const rows = await db.select().from(spotsTable).where(eq(spotsTable.slug, slug))
   if (!rows.length) return c.json({ error: "Spot not found" }, 404)
-  return c.json(rows[0])
+  return c.json(serializeSpot(rows[0]))
 })
 
 // Create or update spot (upsert by slug)
